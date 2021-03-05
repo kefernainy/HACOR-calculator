@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 4, from LayoutIt!</title>
+    <title>HACOR Calculator</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
@@ -21,70 +21,81 @@
 		<div class="col-md-12">
 			<div class="jumbotron">
 				<h2>
-					Hello, world!
+					HACOR Score
 				</h2>
 				<p>
-					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
+				Check your HACOR Score and win! Calculate it after 1-2 hours of NIV. Predict your patient's chance of NIV failure.
 				</p>
 			</div>
 			<div class="dropdown">
-				 
-				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-					Action
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					 <a class="dropdown-item disabled" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-				</div>
+
+				<label type="label" id="heartRate">
+					Heart Rate
+				</label>
+				<select id = "HRSelect">
+					 <option class="dropdown-item" href="#" value = 0> <=120 bpm</option>
+					 <option class="dropdown-item" href="#" value = 1> >= 121</option>
+				</select>
+			</div>
+
+			<div class="dropdown">
+				<label type="label" id="pH">
+					pH
+				</label>
+				<select id="pHSelect">
+					 <option class="dropdown-item" href="#" value = 0 selected = "selected"> >=7.35</option>
+					 <option class="dropdown-item" href="#" value = 2> 7.30-7.34</option>
+					 <option class="dropdown-item" href="#" value = 3> 7.25-7.29</option>
+					 <option class="dropdown-item" href="#" value = 4> <7.25 </option>
+					 </select>
 			</div>
 			<div class="dropdown">
-				 
-				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-					Action
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					 <a class="dropdown-item disabled" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-				</div>
+
+				<label type="label" id="GCS">
+					GCS
+				</label>
+				<select id="GCSSelect">
+					 <option class="dropdown-item" href="#" value = 0>15</option>
+					 <option class="dropdown-item" href="#" value = 2>13-14</option>
+					 <option class="dropdown-item" href="#" value = 5>11-12</option>
+					 <option class="dropdown-item" href="#" value = 10> <=10</option>
+				</select>
 			</div>
-			<div class="dropdown">
-				 
-				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-					Action
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					 <a class="dropdown-item disabled" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-				</div>
+			<div>
+
+				<label type="label" id="pF">
+					P/F ratio
+				</label>
+				<select id="PFSelect">
+					 <option class="dropdown-item" href="#" value = 0> >=201</option>
+					 <option class="dropdown-item" href="#" value = 2>176-201</option>
+					 <option class="dropdown-item" href="#" value = 3>151-175</option>
+					 <option class="dropdown-item" href="#" value = 4>126-150</option>
+					 <option class="dropdown-item" href="#" value = 5>101-125</option>
+					 <option class="dropdown-item" href="#" value = 6> <=100</option>
+				</select>
 			</div>
-			<div class="dropdown">
-				 
-				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-					Action
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					 <a class="dropdown-item disabled" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-				</div>
-			</div>
-			<div class="dropdown">
-				 
-				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-					Action
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					 <a class="dropdown-item disabled" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-				</div>
+			<div>
+
+				<label type="label" id="respiratoryRate">
+					Respiratory Rate
+				</label>
+				<select id = "RRSelect">
+					 <option class="dropdown-item" href="#" value = 0> <=30</option>
+					 <option class="dropdown-item" href="#" value = 1>31-35</option>
+					 <option class="dropdown-item" href="#" value = 2>36-40</option>
+					 <option class="dropdown-item" href="#" value = 3>41-45</option>
+					 <option class="dropdown-item" href="#" value = 4> >=46</option>
+				</select>
 			</div>
 			<div class="jumbotron">
-				<h2>
-					Hello, world!
+				<h2 id="HACORScoreResult">
+0
 				</h2>
-				<p>
-					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+				<p id = "scoreExplanation">
+
 				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
-				</p>
+				<p>Duan et al. Ann. Intensive Care (2019) 9:108 <a href = "https://doi.org/10.1186/s13613-019-0585-9">https://doi.org/10.1186/s13613-019-0585-9</a></p>
 			</div>
 		</div>
 	</div>
